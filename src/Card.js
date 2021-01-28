@@ -6,13 +6,13 @@ function Card(props) {
     return (
         <div className="card">
             <div className="card-image">
-                <img src={props.product.image} alt="img"/>
+                <img src={props.products.image} alt="img"/>
             </div>
             <div className="card-info">
-                <div className="card-name">{props.product.name}</div>
-                <div className="card-rating">{props.product.rating}</div>
-                <div className="card-price">{props.product.price} ₽</div>
-                <CardButton setBought={props.setBought}  />
+                <div className="card-name">{props.products.name}</div>
+                <div className="card-rating">{props.products.rating}</div>
+                <div className="card-price">{props.products.price} ₽</div>
+                <CardButton  setBought={props.setBought} id={props.products.id} bought={props.products.bought}/>
             </div>
         </div>
     );

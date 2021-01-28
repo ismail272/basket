@@ -5,11 +5,11 @@ import Card from './Card';
 function Content(props) {
 
     const newDatabase = props.products.map((item) => {
-        return <Card products={item} setBought={props.setBought}/>;
+        return <Card products={item} setBought={props.setBought} id={props.products.id}/>;
     });
 
     return (
-        <div>
+        <div className="content">
             {newDatabase}
         </div>
     )

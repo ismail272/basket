@@ -4,12 +4,12 @@ import Menu from './Menu';
 import Checkout from './Checkout';
 
 
-function Header(props, {database}) {
+function Header(props) {
     return (
         <div className="header">
             <Logo />
             <Menu />
-            <Checkout database={database} />
+            <Checkout products={props.products} />
             <a href="#" className="logout">
                 выход
             </a>

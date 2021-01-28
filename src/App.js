@@ -2,10 +2,11 @@ import React from 'react';
 import Header from "./Header";
 import Content from "./Content";
 import {useState} from "react"
-import Card from "./Card";
+
 
 function App(props) {
-    const [products, setDatabase] = useState([
+
+    const [products, setProducts] = useState([
         {
             id: 1,
             name: "MacBook",
@@ -80,20 +81,25 @@ function App(props) {
         }
     ]);
 
-    const setBought = products.map = (id) => {
-        setDatabase(
-            products.map(products => {
-                if (products.id === id) return {
-                    ...products,
-                    bought: true
-                }
-                return id
-            })
-        )
+    const setBought = id => {
+       setProducts(
+           products.map( product => {
+               if (product.id === id) {
+                   return {
+                       ...product,
+                       bought: true
+                   }
+               }
+           return product
+           }
+           )
+       )
+
     }
+
     return (
-        <div className={'app'}>
-            <Header />
+        <div className='app'>
+            <Header products={products}/>
             <Content products={products} setBought={setBought} />
         </div>
     );
